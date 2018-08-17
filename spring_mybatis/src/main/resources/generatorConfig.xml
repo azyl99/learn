@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="MySQLTables" targetRuntime="MyBatis3">
+
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/pdd_demo?zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"
+                        userId="root"
+                        password="guya">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.guya2.generate.common.domain" targetProject="spring_mybatis/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.guya2.generate.mybatis.mapper"
+                         targetProject="spring_mybatis/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.guya2.generate.mybatis.mapper"
+                             targetProject="spring_mybatis/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table schema="pdd_demo" tableName="users" domainObjectName="User">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+            <columnOverride column="id" javaType="Long"/>
+            <!--<columnOverride column="uid" javaType="Long"/>-->
+            <!--<columnOverride column="username" javaType="String"/>-->
+            <!--<columnOverride column="nickname" javaType="String"/>-->
+            <!--<columnOverride column="username" javaType="String"/>-->
+            <!--<columnOverride column="gender" javaType="Integer"/>-->
+            <!--<columnOverride column="mobile" javaType="String"/>-->
+            <!--<columnOverride column="province_name" javaType="String"/>-->
+            <!--<columnOverride column="city_name" javaType="String"/>-->
+            <!--<columnOverride column="district_name" javaType="String"/>-->
+            <!--<columnOverride column="shipping_address" javaType="String"/>-->
+            <!--<columnOverride column="is_deleted" javaType="Integer"/>-->
+            <!--<columnOverride column="created_at" javaType="Integer"/>-->
+            <!--<columnOverride column="updated_at" javaType="Integer"/>-->
+            <!--<ignoreColumn column="gmt_modified"/>-->
+        </table>
+
+    </context>
+
+</generatorConfiguration>
