@@ -41,13 +41,17 @@ public class Calculator {
         double out;
         double salary;
 
+        private double percentage(double money) {
+            return 100 * money / salary;
+        }
+
         public String toString() {
             StringBuffer sb = new StringBuffer();
             sb.append(paymentResults).append('\n');
             sb.append(taxResult).append('\n');
             sb.append(ResultFormat.SPLIT);
-            sb.append(String.format(ResultFormat.RESULT_LONG_CONTENT_FORMAT, "total", out, 100 * out / salary, paymentResults.getTotalCompanyPayment(), 100 * paymentResults.getTotalCompanyPayment() / salary));
-            sb.append('\n');
+            sb.append(String.format(ResultFormat.LONG_CONTENT_FORMAT, "total", out, percentage(out), paymentResults.getTotalCompanyPayment(), percentage(paymentResults.getTotalCompanyPayment()))).append('\n');
+            sb.append(String.format(ResultFormat.LONG_CONTENT_FORMAT, "self", salary - out, percentage(salary - out), salary + paymentResults.getTotalCompanyPayment(), percentage(salary + paymentResults.getTotalCompanyPayment()))).append('\n');
             return sb.toString();
         }
     }

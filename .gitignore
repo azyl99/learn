@@ -10,4 +10,4 @@ logs/
 classes/
 /upload
 gradle/wrapper/gradle-wrapper.properties
-out
+out/

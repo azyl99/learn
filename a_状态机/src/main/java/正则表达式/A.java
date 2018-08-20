@@ -51,10 +51,27 @@ public class A {
         }
     }
 
+    public static void test_label() {
+        int i = 0;
+        loop:                   // 只能写在循环块前面，中间不能有任何代码
+        while (true) {
+            if (i < 3) {
+                i++;
+            } else {
+                if (i < 5) {
+                    break loop; // 直接跳出循环块，而不是调到最前面
+                } else {
+                    break;      // 永远不会执行到这里
+                }
+            }
+        }
+        System.out.println(i);
+    }
 
     public static void main(String args[]) {
-        test1();
-        test2();
-        test3();
+//        test1();
+//        test2();
+//        test3();
+        test_label();
     }
 }

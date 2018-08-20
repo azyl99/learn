@@ -71,12 +71,12 @@ public class PaymentUtil {
 
         public String toString() {
             StringBuffer sb = new StringBuffer();
-            sb.append(String.format(ResultFormat.RESULT_TITLE_FORMAT, "", "personal   ", "company   "));
+            sb.append(String.format(ResultFormat.TITLE_FORMAT, "", "personal   ", "company   "));
             for (Result result : results) {
                 sb.append(result).append('\n');
             }
             sb.append(ResultFormat.SPLIT);
-            sb.append(String.format(ResultFormat.RESULT_LONG_CONTENT_FORMAT, "payment",
+            sb.append(String.format(ResultFormat.LONG_CONTENT_FORMAT, "payment",
                             totalPersonalPayment, 100 * totalPersonalPayment / salary,
                             totalCompanyPayment, 100 * totalCompanyPayment / salary));
             return sb.toString();
@@ -90,7 +90,7 @@ public class PaymentUtil {
             private double salary;
 
             public String toString() {
-                return String.format(ResultFormat.RESULT_LONG_CONTENT_FORMAT, type,
+                return String.format(ResultFormat.LONG_CONTENT_FORMAT, type,
                         personalPayment, 100 * personalPayment / salary,
                         companyPayment, 100 * companyPayment / salary);
             }

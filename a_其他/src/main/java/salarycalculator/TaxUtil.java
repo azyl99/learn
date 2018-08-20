@@ -47,7 +47,7 @@ public class TaxUtil {
         double totalTaxRate;
 
         public String toString() {
-            return String.format(ResultFormat.RESULT_SHORT_CONTENT_FORMAT, "tax", tax, (totalTaxRate == 0 ? totalTaxRate : netTaxRate) * 100);
+            return String.format(ResultFormat.SHORT_CONTENT_FORMAT, "tax", tax, (totalTaxRate == 0 ? totalTaxRate : netTaxRate) * 100);
         }
     }
 
