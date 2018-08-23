@@ -58,6 +58,6 @@ public class FruitDish {
 
     public static void main(String[] args) throws Builder.OutOfMoneyException {
         FruitDish fruitDish = new Builder(10).apple(3).pear(4).build();
-        FruitDish fruitDish2 = new Builder(10).banana(7).pear(4).build();
+//        FruitDish fruitDish2 = new Builder(10).banana(7).pear(4).build();
     }
 }

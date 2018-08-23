@@ -18,10 +18,10 @@ public class User implements Observer {
     @Override
     public void update(String message) {
         this.message = message;
-        read();
+        say();
     }
 
-    public void read() {
+    public void say() {
         System.out.println(name + " 收到推送消息： " + message);
     }
 

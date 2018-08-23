@@ -10,7 +10,7 @@ public class AspectTest2 {
     }
 
     public void afterHehe() {
-        System.out.println("afterHehe");
+        System.out.println("afterHehe\n");
     }
 
     public void beforeHeihei() {
@@ -18,6 +18,6 @@ public class AspectTest2 {
     }
 
     public void afterHeihei() {
-        System.out.println("afterHeihei");
+        System.out.println("afterHeihei\n");
     }
 }

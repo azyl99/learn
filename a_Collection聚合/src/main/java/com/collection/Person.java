@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -15,16 +17,17 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class Person {
 
+    int id;
     String name;
     int age;
     boolean gender;
 
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
-        people.add(new Person("zyl",20, false));
-        people.add(new Person("zyl",20, false));
-        people.add(new Person("gmy",21, false));
-        people.add(new Person("zzz",22, true));
+        people.add(new Person(1,"zyl",20, false));
+        people.add(new Person(2,"zyl",20, false));
+        people.add(new Person(3,"gmy",21, false));
+        people.add(new Person(4,"zzz",22, true));
 
         System.out.println(people.stream().map(Person::getName).collect(Collectors.toList()).toString());
         // List --> Set 去重复
@@ -37,5 +40,12 @@ public class Person {
         List nums = Arrays.asList(1, 3, null, 8, 7, 8, 13, 10);
         nums.stream().filter(num -> num != null).distinct().forEach((x) -> System.out.print(x + " "));
         nums.stream().filter(num -> num != null).distinct().forEach(System.out::print);
+
+        System.out.println("\n-----------");
+        Map<Integer, Person> map = people.stream().collect(Collectors.toMap(Person::getId, Function.identity()));// t->t
+        System.out.println(map);
+        System.out.println(map.get(1).getName());
+        Map<Integer, String> m = people.stream().collect(Collectors.toMap(Person::getId, Person::getName));
+        System.out.println(m);
     }
 }

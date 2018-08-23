@@ -17,6 +17,12 @@ public class Test {
         server.registerObserver(userZhang);
         server.registerObserver(userLi);
         server.registerObserver(userWang);
+        server.registerObserver(new Observer() {
+            @Override
+            public void update(String message) {
+                System.out.println("Hey, " + message);
+            }
+        });
         server.setInfomation("PHP是世界上最好用的语言！");
 
         System.out.println("----------------------------------------------");

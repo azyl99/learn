@@ -17,12 +17,34 @@ public class A1 {
 
     int value;
 
-    public static void main(String[] args) {
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
+    public static void howTo() {
+        // WeakHashMap, map.put
         Map<String, String> map = new WeakHashMap<>();
         map.put("a", "a1");
         map.put("b", "b2");
+
+        A1 a1 = new A1();
+        a1.setValue(1);
+        List<A1> list = new ArrayList<>();
+        list.add(a1);
+        a1.setValue(5);// 即便已经放入List了，a1仍然指向原来的实例，依然可以修改值
+        System.out.println(list.get(0).getValue());
+
+        // 无符号右移
+        System.out.printf("0x%x >>> 1  =>  0x%x\n", -1, -1 >>> 1);
+
+    }
+
+    public static void see() {
+        GregorianCalendar gregorianCalendar = new GregorianCalendar();
         Object object;
+        Long a = (Long) null;
+        ByteBuffer byteBuffer = ByteBuffer.allocate(49);
+        System.out.println('\\');// 字符也要转义
+//        Long.parseLong("");// 会报错
+    }
+    
+    public static void test1() {
         Integer i1 = new Integer(222);
         Integer i2 = 222;
         Integer i3 = 222;
@@ -36,28 +58,41 @@ public class A1 {
         System.out.println(i4 == i6);
         System.out.println(i5 == i6);
 
+        System.out.println();
+        System.out.println(222 == i1);// true 自动包裹和解包裹
+        System.out.println(i1 == 222);// true 自动包裹和解包裹
+    }
+
+    public static void test2() {
+        // arraycopy
+        int[] arr1 = {1, 4, 7, 10}, arr2 = new int[3];
+        System.arraycopy(arr1, 0, arr2, 0, arr1.length - 1);
+        for (int val : arr2) {
+            System.out.printf("%d ", val);
+        }
+        System.out.println();
+
         String[] x = "aaa".split(",");
         System.out.println(x.length);
-//        Long.parseLong("");// 会报错
-
-        A1 a1 = new A1();
-        a1.setValue(1);
-        List<A1> list = new ArrayList<>();
-        list.add(a1);
-        a1.setValue(5);// 即便已经放入List了，a1仍然指向原来的实例，依然可以修改值
-        System.out.println(list.get(0).getValue());
-
-        System.out.println('\\');
 
         String str = "hello";
         StringBuilder sbuf = new StringBuilder();
         sbuf.append("abc").append(str, 1, 3);
         System.out.println(sbuf.toString());
-        log.info("hello, {}", "zyl");
-
+        log.info("hello, {}", "zyl");// Slf4j日志
         System.out.println(str instanceof String);
-        Long a = (Long)null;
 
-        ByteBuffer byteBuffer = ByteBuffer.allocate(49);
+        System.out.println("abcdecdf".lastIndexOf("cd"));// 返回字符串最后一次出现的位置
+        System.out.println("abcdecdf".lastIndexOf("cd", 4));// 返回字符串最后一次出现的位置，需要比4小
+//        System.out.println(Integer.parseInt("2147483648"));
+        System.out.println(Integer.parseInt("-2147483648"));
+    }
+
+    public static void main(String[] args) {
+//        howTo();
+//        test1();
+//        test2();
+//        see();
+
     }
 }

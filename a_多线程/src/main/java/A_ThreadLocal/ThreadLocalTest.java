@@ -2,9 +2,10 @@ package A_ThreadLocal;
 
 
 public class ThreadLocalTest {
+
     private static final ThreadLocal<Integer> local = ThreadLocal.withInitial(() -> 0);
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         for (int i = 0; i < 10; i += 3) {
             new MyThread(i).start();
         }

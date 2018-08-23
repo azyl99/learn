@@ -13,7 +13,7 @@ public class AspectTest1 {
     /**
      * 方法一：复用切点表达式
      */
-    @Pointcut("execution(* *.say(..))")
+    @Pointcut("execution(* com..say(..))")// .. 表示跳过中间的包和类 com.guya2.say的话 idea就会提示是错的
     public void say(){
         System.out.println("好像这个函数里的内容没有用，只是做个标识而已");
     }
@@ -23,7 +23,7 @@ public class AspectTest1 {
     }
     @After("say()")
     public void afterSay(){
-        System.out.println("afterSay");
+        System.out.println("afterSay\n");
     }
 
     /**
@@ -39,7 +39,7 @@ public class AspectTest1 {
     }
     @After("execution(* *.hello(..))")
     public void afterHello() {
-        System.out.println("afterHello");
+        System.out.println("afterHello\n");
     }
 
     /**
@@ -56,7 +56,7 @@ public class AspectTest1 {
                 }
             }
             jp.proceed();// 注释掉这句会阻塞原先方法的调用
-            System.out.println("afterHey");
+            System.out.println("afterHey\n");
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
