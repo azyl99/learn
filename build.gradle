@@ -24,6 +24,7 @@ allprojects {
             exclude group: "org.mockito"
         }
         compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'//javax.annotation.Nullable
+        compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
     }
 
 }
@@ -67,7 +68,7 @@ project(":a_反射") {
 
 project(":guava_try") {
     dependencies {
-        compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
+//        compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'//放到了公共目录里
     }
 }
 

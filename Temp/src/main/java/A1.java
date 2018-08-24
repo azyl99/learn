@@ -93,6 +93,8 @@ public class A1 {
 //        test1();
 //        test2();
 //        see();
+        Integer a = null;
+        System.out.println(a.equals(null));// NullPointerException
 
     }
 }

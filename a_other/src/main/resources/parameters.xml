@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<parameters owner="zyl" say="hello">hhh1
+    <parameter key="HolderName">测试</parameter>hhh2
+    <parameter key="save-holder">1</parameter>
+    <parameter key="HolderEmail">ceshi@ceshi.com</parameter>
+        <parameter key="HolderCardType">3</parameter>
+    <parameter key="HolderCardNo">asdasd</parameter>hhh3
+    <parameter key="HolderSex">1</parameter>
+    <parameter key="HolderMobile">13333333333</parameter>hhh4
+</parameters>
+
+

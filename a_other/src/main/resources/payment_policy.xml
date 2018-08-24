@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policy>
+    <province name="Zhejiang">
+        <city name="Hangzhou" version="2018.7">
+            <bounds>
+                <bound type="social">
+                    <lower>3054.95</lower>
+                    <upper>15274.74</upper>
+                </bound>
+                <bound type="fund">
+                    <lower>4862.2</lower>
+                    <upper>24311</upper>
+                </bound>
+            </bounds>
+            <payments>
+                <payment name="pension" type="social">
+                    <personal>0.08</personal>
+                    <company>0.14</company>
+                </payment>
+                <payment name="medical" type="social">
+                    <personal>0.02</personal>
+                    <company>0.115</company>
+                </payment>
+                <payment name="unemploy" type="social">
+                    <personal>0</personal>
+                    <company>0.015</company>
+                </payment>
+                <payment name="birth" type="social">
+                    <personal>0</personal>
+                    <company>0.006</company>
+                </payment>
+                <payment name="injury" type="social">
+                    <personal>0</personal>
+                    <company>0.009</company>
+                </payment>
+                <payment name="house" type="fund">
+                    <personal>0.12</personal>
+                    <company>0.12</company>
+                </payment>
+            </payments>
+        </city>
+        <city name="Ningbo" version="2018.?">
+            <bounds>
+                <bound type="social">
+                    <lower>3279</lower>
+                    <upper>16394</upper>
+                </bound>
+                <bound type="fund">
+                    <lower>2010</lower>
+                    <upper>24420</upper>
+                </bound>
+            </bounds>
+            <payments>
+                <payment name="pension" type="social">
+                    <personal>0.08</personal>
+                    <company>0.14</company>
+                </payment>
+                <payment name="medical" type="social">
+                    <personal>0.02</personal>
+                    <company>0.09</company>
+                </payment>
+                <payment name="unemploy" type="social">
+                    <personal>0.005</personal>
+                    <company>0.005</company>
+                </payment>
+                <payment name="birth" type="social">
+                    <personal>0</personal>
+                    <company>0.007</company>
+                </payment>
+                <payment name="injury" type="social">
+                    <personal>0</personal>
+                    <company>0.005</company>
+                </payment>
+                <payment name="house" type="fund">
+                    <personal>0.12</personal>
+                    <company>0.12</company>
+                </payment>
+            </payments>
+        </city>
+    </province>
+    <province name="Shanghai">
+        <city name="Shanghai" version="2018.7">
+            <bounds>
+                <bound type="social">
+                    <lower>4279</lower>
+                    <upper>21796</upper>
+                </bound>
+                <bound type="fund">
+                    <lower>4279</lower>
+                    <upper>24311</upper>
+                </bound>
+            </bounds>
+            <payments>
+                <payment name="pension" type="social">
+                    <personal>0.08</personal>
+                    <company>0.21</company>
+                </payment>
+                <payment name="medical" type="social">
+                    <personal>0.02</personal>
+                    <company>0.11</company>
+                </payment>
+                <payment name="unemploy" type="social">
+                    <personal>0.005</personal>
+                    <company>0.015</company>
+                </payment>
+                <payment name="birth" type="social">
+                    <personal>0</personal>
+                    <company>0.01</company>
+                </payment>
+                <payment name="injury" type="social">
+                    <personal>0</personal>
+                    <company>0.005</company>
+                </payment>
+                <payment name="house" type="fund">
+                    <personal>0.07</personal>
+                    <company>0.07</company>
+                </payment>
+            </payments>
+        </city>
+    </province>
+</policy>
