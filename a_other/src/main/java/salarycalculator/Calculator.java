@@ -63,5 +63,9 @@ public class Calculator {
         System.out.println(new Calculator(new PaymentPolicy("Hangzhou")).calculate(a));
         System.out.println(new Calculator(new PaymentPolicy("Shanghai")).calculate(a));
         System.out.println(new Calculator(new PaymentPolicy("Ningbo")).calculate(a));
+        a = 6000;
+        System.out.println(new Calculator(new PaymentPolicy("Hangzhou")).calculate(a));
+        System.out.println(new Calculator(new PaymentPolicy("Shanghai")).calculate(a));
+        System.out.println(new Calculator(new PaymentPolicy("Ningbo")).calculate(a));
     }
 }

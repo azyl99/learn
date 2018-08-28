@@ -7,22 +7,15 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-import sun.security.provider.PolicyParser;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author guya
@@ -75,12 +68,12 @@ public class PaymentPolicy {
     static Map<String, String> provinceCityMap = new HashMap<>();
     static Map<String, PaymentPolicy> cityPolicyMap = new HashMap<>();
     static {
-        paymentPolicyParser("payment_policy.xml");
+        paymentPolicyParser("salarycalculator/payment_policy.xml");
     }
 
     private static void paymentPolicyParser(String resource) {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-        FileInputStream xmlInputStream = null;
+        FileInputStream xmlInputStream;
         try {
             System.out.println("Reading Resource " + resource + "...");
             xmlInputStream = new FileInputStream(new File(Resources.getResource(resource).getFile()));
@@ -94,14 +87,9 @@ public class PaymentPolicy {
                     continue;
                 }
                 String provinceName = province.getAttributes().getNamedItem("name").getNodeValue();
-//                System.out.println(provinceName);
 
                 NodeList cities = province.getChildNodes();
                 for (int j = 0; j < cities.getLength(); j++) {
-                    double socialLowerBound = 0;
-                    double socialUpperBound = 0;
-                    double fundLowerBound = 0;
-                    double fundUpperBound = 0;
                     Node city = cities.item(j);
                     // 还有COMMENT_NODE等，所以下面的代码不可以用
                     // if (city.getNodeType() == Node.TEXT_NODE) {
@@ -111,7 +99,6 @@ public class PaymentPolicy {
                     NamedNodeMap cityAttributes = city.getAttributes();
                     String cityName = cityAttributes.getNamedItem("name").getNodeValue();
                     String version = cityAttributes.getNamedItem("version").getNodeValue();
-//                    System.out.println(" " + cityName + " " + version);
 
                     PaymentPolicy cityPaymentPolicy = new PaymentPolicy();
                     provinceCityMap.put(provinceName, cityName);
@@ -130,19 +117,26 @@ public class PaymentPolicy {
                                     if (bound.getNodeType() != Node.ELEMENT_NODE) {
                                         continue;
                                     }
-//                                    System.out.println(bound.getNodeName());
                                     String boundType = bound.getAttributes().getNamedItem("type").getNodeValue();
 
+                                    Double lower = null;
+                                    Double upper = null;
                                     for (int m = 0; m < bound.getChildNodes().getLength(); m++) {
                                         Node temp = bound.getChildNodes().item(m);
                                         if (temp.getNodeType() != Node.ELEMENT_NODE) {
                                             continue;
                                         }
-                                        Double lower = Double.valueOf(temp.getTextContent());
-                                        Double upper = Double.valueOf(temp.getTextContent());
-                                        lowerBoundMap.put(boundType, lower);
-                                        upperBoundMap.put(boundType, upper);
+                                        switch (temp.getNodeName()) {
+                                            case "lower":
+                                                lower = Double.valueOf(temp.getTextContent());
+                                                break;
+                                            case "upper":
+                                                upper = Double.valueOf(temp.getTextContent());
+                                                break;
+                                        }
                                     }
+                                    lowerBoundMap.put(boundType, lower);
+                                    upperBoundMap.put(boundType, upper);
                                 }
                                 break;
                             case "payments":
@@ -154,8 +148,22 @@ public class PaymentPolicy {
                                     }
                                     String paymentName = paymentNode.getAttributes().getNamedItem("name").getNodeValue();
                                     String paymentType = paymentNode.getAttributes().getNamedItem("type").getNodeValue();
-                                    double personalRate = Double.valueOf(paymentNode.getChildNodes().item(1).getTextContent());
-                                    double companyRate = Double.valueOf(paymentNode.getChildNodes().item(3).getTextContent());
+                                    Double personalRate = null;
+                                    Double companyRate = null;
+                                    for (int m = 0; m < paymentNode.getChildNodes().getLength(); m++) {
+                                        Node temp = paymentNode.getChildNodes().item(m);
+                                        if (temp.getNodeType() != Node.ELEMENT_NODE) {
+                                            continue;
+                                        }
+                                        switch (temp.getNodeName()) {
+                                            case "personal":
+                                                personalRate = Double.valueOf(temp.getTextContent());
+                                                break;
+                                            case "company":
+                                                companyRate = Double.valueOf(temp.getTextContent());
+                                                break;
+                                        }
+                                    }
                                     Double lower = lowerBoundMap.get(paymentType);
                                     Double upper = upperBoundMap.get(paymentType);
                                     Payment payment = new Payment(paymentName, lower, upper, personalRate, companyRate);

@@ -1,4 +1,4 @@
-package temp;
+package salarycalculator.test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +16,7 @@ import org.w3c.dom.NodeList;
 public class XmlParser {
     public static void main(String[] args) throws Exception {
 //        getXML("parameters.xml", "HolderName1");
-        readXmlFile("accounts.xml");
+        readXmlFile("salarycalculator/test/accounts.xml");
     }
 
     /**

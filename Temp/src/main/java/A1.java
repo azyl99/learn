@@ -16,6 +16,13 @@ import java.util.WeakHashMap;
 public class A1 {
 
     int value;
+    // RuntimeException不需要强制检查
+    public void testThrow1() {
+        throw new RuntimeException("hhh");
+    }
+    public void testThrow2() throws Exception {
+        throw new Exception("hhh");
+    }
 
     public static void howTo() {
         // WeakHashMap, map.put
@@ -94,7 +101,46 @@ public class A1 {
 //        test2();
 //        see();
         Integer a = null;
-        System.out.println(a.equals(null));// NullPointerException
+//        System.out.println(a.equals(null));// NullPointerException
 
+        B.main(null);
+    }
+}
+
+class B {
+    private int x;      // only for self
+    protected int y;    // package
+    public int z;       // for all
+    int t;              // default <=> package + 子类
+
+    public static void main(String[] args) {
+        System.out.println("I am not a public class: B");
+    }
+}
+
+class C extends B {
+    public static void main(String[] args) {
+        B b = new B();
+        b.y = 0;
+        b.z = 0;
+        b.t = 0;
+//        b.clone();// 'clone()' has protected access in 'java.lang.Object'
+    }
+}
+
+
+enum Size {
+    SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
+
+    private Size(String abbreviation) { this.abbreviation = abbreviation; }
+    public String getAbbreviation() { return abbreviation; }
+
+    private String abbreviation;
+    public static void main(String[] args)
+    {
+        Size size = Enum.valueOf(Size.class, "LARGE");// 厉害了，直接解析出来
+        System.out.println("size=" + size);
+        System.out.println("abbreviation=" + size.getAbbreviation());
+        System.out.println("ordinal=" + size.ordinal());
     }
 }
