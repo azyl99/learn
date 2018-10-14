@@ -1,4 +1,4 @@
-package A_注解;
+package AnnotationDemo;
 
 public class Hey {
     public String name() {

@@ -122,7 +122,7 @@ public class Card {
         if (code == CardCode.BJOKER_CODE) {
             return Value.BJOKER;
         }
-        return Value.values()[(code & 16) - 1];
+        return Value.values()[(code & 0x0F) - 1];
     }
 
     private static int toCode(Suit suit, Value value) {
@@ -160,6 +160,10 @@ public class Card {
     @Override
     public String toString() {
         return "" + CardCode.getHexCode(code) + " " + suit + " " + value;
+    }
+
+    public String abbr() {
+        return suit.toString() + value;
     }
 
     static class CardCodeConvertException extends RuntimeException { }

@@ -1,3 +1,5 @@
+package com.proxy;
+
 /**
  * 静态代理，这个代理类也必须要实现和被代理类相同的Person接口
  *

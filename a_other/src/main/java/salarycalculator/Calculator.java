@@ -3,6 +3,9 @@ package salarycalculator;
 import lombok.Data;
 import lombok.Getter;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -17,7 +20,7 @@ public class Calculator {
     Result result;
 
     public Calculator(PaymentPolicy paymentPolicy) {
-        this(paymentPolicy, TaxPolicy.defaultTaxPolicy());
+        this(paymentPolicy, TaxPolicy.defaultTaxPolicy);
     }
 
     public Calculator(PaymentPolicy paymentPolicy, TaxPolicy taxPolicy) {
@@ -59,13 +62,36 @@ public class Calculator {
 
     public static void main(String[] args) {
 
+//        try {
+//            Enumeration<URL> urls =  ClassLoader.getSystemResources("");
+//
+//            while(urls.hasMoreElements()) {
+//                URL url = urls.nextElement();
+//                System.out.println(url);
+//            }
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        test();
+    }
+
+
+
+
+
+
+
+
+    public static void test() {
         int a = 25000;
-        System.out.println(new Calculator(new PaymentPolicy("Hangzhou")).calculate(a));
-        System.out.println(new Calculator(new PaymentPolicy("Shanghai")).calculate(a));
-        System.out.println(new Calculator(new PaymentPolicy("Ningbo")).calculate(a));
-        a = 6000;
-        System.out.println(new Calculator(new PaymentPolicy("Hangzhou")).calculate(a));
-        System.out.println(new Calculator(new PaymentPolicy("Shanghai")).calculate(a));
-        System.out.println(new Calculator(new PaymentPolicy("Ningbo")).calculate(a));
+//        System.out.println(new Calculator(new PaymentPolicy("Hangzhou")).calculate(a));
+//        System.out.println(new Calculator(new PaymentPolicy("Shanghai")).calculate(a));
+//        System.out.println(new Calculator(new PaymentPolicy("Ningbo")).calculate(a));
+        a = 25000;
+        System.out.println(new Calculator(new PaymentPolicy("Hangzhou"), TaxPolicy.oldTaxPolicy).calculate(a));
+        System.out.println(new Calculator(new PaymentPolicy("Hangzhou"), TaxPolicy.defaultTaxPolicy).calculate(a));
+//        System.out.println(new Calculator(new PaymentPolicy("Shanghai")).calculate(a));
+//        System.out.println(new Calculator(new PaymentPolicy("Ningbo")).calculate(a));
     }
 }

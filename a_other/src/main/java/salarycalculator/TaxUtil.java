@@ -13,7 +13,7 @@ public class TaxUtil {
     private TaxPolicy taxPolicy;
 
     public TaxUtil() {
-        this.taxPolicy = TaxPolicy.defaultTaxPolicy();
+        this.taxPolicy = TaxPolicy.defaultTaxPolicy;
     }
 
     public TaxUtil(TaxPolicy taxPolicy) {
@@ -34,6 +34,8 @@ public class TaxUtil {
         }
         TaxPolicy.TaxLayer taxLayer = taxPolicy.getTaxLayer(i - 1);
         result.setTax(salary * taxLayer.taxRate - taxLayer.fastConstant);
+
+        salary += taxPolicy.getTaxLayer(0).critical;
         result.setNetTaxRate(result.tax / salary);
         result.setAfterPayment(salary - result.tax);
         return result;

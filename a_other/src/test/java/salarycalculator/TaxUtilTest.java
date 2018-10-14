@@ -14,7 +14,7 @@ public class TaxUtilTest {
     @Before
     public void before() {
         taxUtil = new TaxUtil();
-        taxUtil.setTaxPolicy(TaxPolicy.defaultTaxPolicy());
+        taxUtil.setTaxPolicy(TaxPolicy.oldTaxPolicy);
     }
 
     @Test

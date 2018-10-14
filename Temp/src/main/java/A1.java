@@ -116,6 +116,11 @@ class B {
     public static void main(String[] args) {
         System.out.println("I am not a public class: B");
     }
+
+    @Override
+    public String toString() {
+        return "toString B";
+    }
 }
 
 class C extends B {
@@ -125,6 +130,13 @@ class C extends B {
         b.z = 0;
         b.t = 0;
 //        b.clone();// 'clone()' has protected access in 'java.lang.Object'
+        B obj = new C();
+        System.out.println(obj.toString());
+    }
+
+    @Override
+    public String toString() {
+        return "toString C";
     }
 }
 

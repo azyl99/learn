@@ -1,3 +1,5 @@
+package com.proxy;
+
 /**
  * 顶层接口
  *

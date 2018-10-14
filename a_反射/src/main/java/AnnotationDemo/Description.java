@@ -1,4 +1,4 @@
-package A_注解;
+package AnnotationDemo;
 
 import java.lang.annotation.*;
 

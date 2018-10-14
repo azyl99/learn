@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Data
@@ -22,7 +21,7 @@ public class Person {
     int age;
     boolean gender;
 
-    public static void main(String[] args) {
+    public static void test() {
         List<Person> people = new ArrayList<>();
         people.add(new Person(1,"zyl",20, false));
         people.add(new Person(2,"zyl",20, false));
@@ -47,5 +46,14 @@ public class Person {
         System.out.println(map.get(1).getName());
         Map<Integer, String> m = people.stream().collect(Collectors.toMap(Person::getId, Person::getName));
         System.out.println(m);
+    }
+
+    public static void main(String[] args) {
+        // test();
+
+        String x = "2, 35, 52, 9, 30, 31";
+//        List<String> list = Arrays.asList(x.split(","));
+        Set<Long> set = Arrays.asList(x.split(",")).stream().map(t->Long.valueOf(t.trim())).collect(Collectors.toSet());
+        set.forEach(t -> System.out.print(t + " "));
     }
 }

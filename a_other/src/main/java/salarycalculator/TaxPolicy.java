@@ -20,9 +20,10 @@ public class TaxPolicy {
         return taxLayers.get(i);
     }
 
-    static public TaxPolicy defaultTaxPolicy() {
-        TaxPolicy taxPolicy = new TaxPolicy();
-        taxPolicy.setTaxLayers(Arrays.asList (
+    static TaxPolicy oldTaxPolicy= new TaxPolicy();
+    static TaxPolicy defaultTaxPolicy= new TaxPolicy();
+    static {
+        oldTaxPolicy.setTaxLayers(Arrays.asList (
                 new TaxPolicy.TaxLayer(3500, 0.03, 0),
                 new TaxPolicy.TaxLayer(1500, 0.1, 105),
                 new TaxPolicy.TaxLayer(4500, 0.2, 555),
@@ -31,7 +32,15 @@ public class TaxPolicy {
                 new TaxPolicy.TaxLayer(55000, 0.35, 5505),
                 new TaxPolicy.TaxLayer(80000, 0.45, 13505)
         ));
-        return taxPolicy;
+        defaultTaxPolicy.setTaxLayers(Arrays.asList (
+                new TaxPolicy.TaxLayer(5000, 0.03, 0),
+                new TaxPolicy.TaxLayer(3000, 0.1, 210),
+                new TaxPolicy.TaxLayer(12000, 0.2, 1410),
+                new TaxPolicy.TaxLayer(25000, 0.25, 2660),
+                new TaxPolicy.TaxLayer(35000, 0.3, 4410),
+                new TaxPolicy.TaxLayer(55000, 0.35, 7160),
+                new TaxPolicy.TaxLayer(80000, 0.45, 15160)
+        ));
     }
 
     @Data

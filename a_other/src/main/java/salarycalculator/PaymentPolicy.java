@@ -1,8 +1,8 @@
 package salarycalculator;
 
-import com.google.common.io.Resources;
 import lombok.Data;
 import lombok.Getter;
+import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -10,8 +10,7 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,12 +70,13 @@ public class PaymentPolicy {
         paymentPolicyParser("salarycalculator/payment_policy.xml");
     }
 
-    private static void paymentPolicyParser(String resource) {
+    private static void paymentPolicyParser(String resourcePath) {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-        FileInputStream xmlInputStream;
+        InputStream xmlInputStream;
         try {
-            System.out.println("Reading Resource " + resource + "...");
-            xmlInputStream = new FileInputStream(new File(Resources.getResource(resource).getFile()));
+            System.out.println("Reading Resource " + resourcePath + "...");
+//            xmlInputStream = new FileInputStream(new File(Resources.getResource(resourcePath).getFile()));// 也可以
+            xmlInputStream = new ClassPathResource(resourcePath).getInputStream();
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
             Document document = builder.parse(xmlInputStream);
             Node policy = document.getChildNodes().item(0);// 根节点 <policy>

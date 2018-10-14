@@ -1,4 +1,4 @@
-package A_注解;
+package AnnotationDemo;
 
 import org.reflections.Reflections;
 
@@ -8,9 +8,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
+
+    public static void test() {
         try {
-            Class c = Class.forName("A_注解.Hello");
+            Class c = Class.forName("AnnotationDemo.Hello");
             // 判断这个类是否存在Description这样的一个注解
             boolean isExist = c.isAnnotationPresent(Description.class);
             if (isExist) {
@@ -40,5 +41,9 @@ public class Main {
 
         System.out.println(annotated.toString());
 
+    }
+    public static void main(String[] args) {
+        test();
+        Hello hello;
     }
 }
