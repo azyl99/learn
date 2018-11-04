@@ -1,18 +1,16 @@
 package com.guya2;
 
-import com.guya2.Demo;
-import com.guya2.DemoController;
-import com.guya2.DemoRepository;
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
-import org.hamcrest.CoreMatchers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +28,7 @@ public class DemoControllerTest {
                 .thenReturn(expectedDemos);
         controller = new DemoController(mockRepository);
     }
+
     /**
      * 最原始的测试
      */
@@ -49,7 +48,7 @@ public class DemoControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/demos"))
                 .andExpect(MockMvcResultMatchers.view().name("demos"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("demoList"))
-                ;//.andExpect(MockMvcResultMatchers.model().attribute("demoList",CoreMatchers.hasItem(expectedDemos)));
+        ;//.andExpect(MockMvcResultMatchers.model().attribute("demoList",CoreMatchers.hasItem(expectedDemos)));
     }
 
     private List<Demo> createDemoList(int count) {

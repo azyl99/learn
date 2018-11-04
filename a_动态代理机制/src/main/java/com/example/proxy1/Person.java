@@ -1,4 +1,4 @@
-package com.proxy;
+package com.example.proxy1;
 
 /**
  * 顶层接口

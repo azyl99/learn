@@ -1,4 +1,4 @@
-package com.proxy;
+package com.example.proxy1;
 
 /**
  * 需要被代理的类 实现了一个接口Person
