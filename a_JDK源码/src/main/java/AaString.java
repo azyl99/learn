@@ -42,7 +42,7 @@
  * 下面来看一下Java是如何处理这些增补字符的。  <br/>
  *
  *    分别初始化2个16位无符号的整数 —— W1和W2。
- *    其中W1=110110yyyyyyyyyy（0xD800-0xDBFF）,W2 = 110111xxxxxxxxxx(0xDC00-OxDFFF)。
+ *    其中W1 =  110110yyyyyyyyyy（0xD800-0xDBFF）,W2 = 110111xxxxxxxxxx(0xDC00-OxDFFF)。
  *    然后，将Unicode的高10位分配给W1的低10位，将Unicode 的低10位分配给W2的低10位。
  *    这样就可以将20bits的代码点U拆成两个16bits的代码单元。而且这两个代码点正好落在替代区域U+D800-U+DFFF中。<br/>
  *<br/>
@@ -70,8 +70,10 @@
  * 后两者目前超出了有效Unicode代码点的范围
  * U-00200000 - U-03FFFFFF： 111110xx 10xxxxxx 10xxxxxx 10xxxxx x 10xxxxxx <br/>
  * U-04000000 - U-7FFFFFFF： 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx <br/>
+ *
+ * @author guya
  */
-public class A_String {
+public class AaString {
     public static String str = "\uD835\uDD6B汉a";// char value[] = {'\uD835','\uDD6B','汉','a'};
 
     public static void main(String[] args) {
