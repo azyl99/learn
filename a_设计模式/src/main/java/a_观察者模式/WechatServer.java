@@ -15,7 +15,7 @@ public class WechatServer implements Observable {
     private String message;
 
     public WechatServer() {
-        list = new ArrayList<Observer>();
+        list = new ArrayList<>();
     }
 
     @Override
@@ -26,16 +26,17 @@ public class WechatServer implements Observable {
 
     @Override
     public void removeObserver(Observer o) {
-        if(!list.isEmpty())
+        if (!list.isEmpty()) {
             list.remove(o);
+        }
     }
 
     //遍历
     @Override
     public void notifyObserver() {
         for(int i = 0; i < list.size(); i++) {
-            Observer oserver = list.get(i);
-            oserver.update(message);
+            Observer observer = list.get(i);
+            observer.update(message);
         }
     }
 
