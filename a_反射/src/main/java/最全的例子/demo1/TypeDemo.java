@@ -1,4 +1,4 @@
-package 泛型;
+package 最全的例子.demo1;
 
 import org.springframework.core.ResolvableType;
 import org.springframework.util.ClassUtils;
@@ -13,8 +13,8 @@ import java.util.Set;
 
 /**
  * 工具：
- *  ResolvableType：泛型参数的解析
- *  ReflectionUtils：反射工具
+ *  ResolvableType：泛型参数的解析工具类
+ *  ReflectionUtils：反射工具类
  *  ClassUtils：类工具，获得类的字段、方法、构造函数等
  * 参考https://jinnianshilongnian.iteye.com/blog/1993608
  * @author guya on 2018/12/7
@@ -68,7 +68,7 @@ public class TypeDemo<T> {
                 // 字段
                 ResolvableType resolvableType = ResolvableType.forField(field);// ReflectionUtils.findField(TypeDemo.class, "c")
                 // Long, ? extends Map<String, Integer>
-                System.out.println("\t\t" + resolvableType.getGeneric(0).resolve()           // Long
+                System.out.println("1:\t\t" + resolvableType.getGeneric(0).resolve()           // Long
                         + DELIMETER3 + resolvableType.getGeneric(1).resolve()                // Map
                         + DELIMETER3 + resolvableType.getGeneric(1).getGeneric(0).resolve()  // String
                         + DELIMETER3 + resolvableType.getGeneric(1, 1).resolve()             // Integer
@@ -82,7 +82,8 @@ public class TypeDemo<T> {
         // index=1 -->  Map<Long, ? extends Map<String, List<Short>>
         ResolvableType resolvableType2 = ResolvableType.forConstructorParameter(
                 ClassUtils.getConstructorIfAvailable(TypeDemo.class, Integer.class, Map.class), 1);
-        System.out.println(resolvableType2.getGeneric(0).resolve()  // Long
+        System.out.println("2:\t\t" + resolvableType2.getType()         // Map<Long, ? extends Map<String, List<Short>>
+                + DELIMETER3 + resolvableType2.getGeneric(0).resolve()  // Long
                 + DELIMETER3 + resolvableType2.getGeneric(1).resolve()       // Map
                 + DELIMETER3 + resolvableType2.getGeneric(1, 0).resolve()    // String
                 + DELIMETER3 + resolvableType2.getGeneric(1, 1).resolve()    // List
@@ -108,13 +109,14 @@ public class TypeDemo<T> {
         // 自定义泛型类型
         ResolvableType resolvableType5 = ResolvableType.forClassWithGenerics(Map.class, String.class, Integer.class);// 相当于创建一个 Map<String, Integer>类型
         ResolvableType resolvableType6 = ResolvableType.forArrayComponent(resolvableType5);// 相当于创建一个 Map<String, Integer>[] 数组；
+        System.out.println(resolvableType5.getGenerics().length);// 泛型类型的长度 Map<K,V> --> K,V 长度为2
         System.out.println(resolvableType6.getComponentType().getGeneric(0).resolve()
                 + DELIMETER3 + resolvableType6.getComponentType().getGeneric(1).resolve()
         );
 
         // 创建一个List<Integer>[]数组
         ResolvableType resolvableType7 = ResolvableType.forClassWithGenerics(List.class, Integer.class);
-        ResolvableType resolvableType8= ResolvableType.forArrayComponent(resolvableType7);
+        ResolvableType resolvableType8 = ResolvableType.forArrayComponent(resolvableType7);
         ResolvableType resolvableType9 = ResolvableType.forClassWithGenerics(List.class, Object.class);
         ResolvableType resolvableType10= ResolvableType.forArrayComponent(resolvableType9);
         System.out.println(resolvableType7.isAssignableFrom(resolvableType9)        // List<Integer> <- List<Object>  : false

@@ -1,4 +1,4 @@
-package 类的加载;
+package 类的加载.a1;
 
 import lombok.Data;
 

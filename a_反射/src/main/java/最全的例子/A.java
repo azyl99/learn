@@ -1,4 +1,4 @@
-package 泛型;
+package 最全的例子;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

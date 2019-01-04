@@ -27,6 +27,7 @@ allprojects {
         compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'//javax.annotation.Nullable
         compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
         compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+        compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
     }
 
 }
