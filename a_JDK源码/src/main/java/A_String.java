@@ -73,7 +73,7 @@
  *
  * @author guya
  */
-public class AaString {
+public class A_String {
     public static String str = "\uD835\uDD6B汉a";// char value[] = {'\uD835','\uDD6B','汉','a'};
 
     public static void main(String[] args) {

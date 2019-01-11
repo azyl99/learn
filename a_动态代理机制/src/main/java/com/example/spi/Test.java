@@ -1,5 +1,6 @@
 package com.example.spi;
 
+import java.util.ArrayList;
 import java.util.ServiceLoader;
 
 /**
@@ -9,7 +10,7 @@ import java.util.ServiceLoader;
  * @author guya on 2019/1/4
  */
 public class Test {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         ServiceLoader<MyService> loaders = ServiceLoader.load(MyService.class);
         for (MyService myService : loaders) {
             myService.say();
