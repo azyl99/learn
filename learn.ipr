@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac"/>
+    <resourceExtensions>
+      <entry name=".+\.(properties|xml|html|dtd|tld)"/>
+      <entry name=".+\.(gif|png|jpeg|jpg)"/>
+    </resourceExtensions>
+    <wildcardResourcePatterns>
+      <entry name="!?*.java"/>
+      <entry name="!?*.groovy"/>
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true"/>
+    <bytecodeTargetLevel target="1.8"/>
+  </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright/>
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false"/>
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false"/>
+  <component name="GradleUISettings">
+    <setting name="root"/>
+  </component>
+  <component name="GradleUISettings2">
+    <setting name="root"/>
+  </component>
+  <component name="IdProvider" IDEtalkID="11DA1DB66DD62DDA1ED602B7079FE97C"/>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY"/>
+    <option name="OPTION_SCOPE" value="protected"/>
+    <option name="OPTION_HIERARCHY" value="true"/>
+    <option name="OPTION_NAVIGATOR" value="true"/>
+    <option name="OPTION_INDEX" value="true"/>
+    <option name="OPTION_SEPARATE_INDEX" value="true"/>
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false"/>
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false"/>
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false"/>
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true"/>
+    <option name="OPTION_DEPRECATED_LIST" value="true"/>
+    <option name="OTHER_OPTIONS" value=""/>
+    <option name="HEAP_SIZE"/>
+    <option name="LOCALE"/>
+    <option name="OPEN_IN_BROWSER" value="true"/>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/learn.iml" filepath="$PROJECT_DIR$/learn.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/LintCode/LintCode.iml" filepath="$PROJECT_DIR$/LintCode/LintCode.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/Temp/Temp.iml" filepath="$PROJECT_DIR$/Temp/Temp.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_Collection聚合/a_Collection聚合.iml" filepath="$PROJECT_DIR$/a_Collection聚合/a_Collection聚合.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_JDK源码/a_JDK源码.iml" filepath="$PROJECT_DIR$/a_JDK源码/a_JDK源码.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_other/a_other.iml" filepath="$PROJECT_DIR$/a_other/a_other.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_动态代理机制/a_动态代理机制.iml" filepath="$PROJECT_DIR$/a_动态代理机制/a_动态代理机制.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_反射/a_反射.iml" filepath="$PROJECT_DIR$/a_反射/a_反射.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_多线程/a_多线程.iml" filepath="$PROJECT_DIR$/a_多线程/a_多线程.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_状态机/a_状态机.iml" filepath="$PROJECT_DIR$/a_状态机/a_状态机.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_百度图像识别/a_百度图像识别.iml" filepath="$PROJECT_DIR$/a_百度图像识别/a_百度图像识别.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_虚拟机/a_虚拟机.iml" filepath="$PROJECT_DIR$/a_虚拟机/a_虚拟机.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/a_设计模式/a_设计模式.iml" filepath="$PROJECT_DIR$/a_设计模式/a_设计模式.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/guava_try/guava_try.iml" filepath="$PROJECT_DIR$/guava_try/guava_try.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/proxy/proxy.iml" filepath="$PROJECT_DIR$/proxy/proxy.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/spring_AOP/spring_AOP.iml" filepath="$PROJECT_DIR$/spring_AOP/spring_AOP.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/spring_mockmvc/spring_mockmvc.iml" filepath="$PROJECT_DIR$/spring_mockmvc/spring_mockmvc.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/spring_mybatis/spring_mybatis.iml" filepath="$PROJECT_DIR$/spring_mybatis/spring_mybatis.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/spring_定时任务/spring_定时任务.iml" filepath="$PROJECT_DIR$/spring_定时任务/spring_定时任务.iml"/>
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-type="JavaSDK" assert-jdk-15="true" project-jdk-name="1.8">
+    <output url="file://$PROJECT_DIR$/out"/>
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true"/>
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs=""/>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl/>
+          </splitter-proportions>
+          <settings/>
+        </UIState>
+      </state>
+      <state key="Copyright.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl/>
+          </splitter-proportions>
+        </UIState>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl>
+              <option name="proportions">
+                <list>
+                  <option value="0.2"/>
+                </list>
+              </option>
+            </SplitterProportionsDataImpl>
+          </splitter-proportions>
+          <last-edited>1.6</last-edited>
+        </UIState>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl/>
+          </splitter-proportions>
+          <settings/>
+        </UIState>
+      </state>
+    </states>
+  </component>
+</project>

@@ -31,6 +31,7 @@ public class Person {
         System.out.println(people.stream().map(Person::getName).collect(Collectors.toList()).toString());
         // List --> Set 去重复
         System.out.println(people.stream().collect(Collectors.toSet()).toString());
+        // identity: 初始值
         System.out.println(people.stream().map(Person::getAge).reduce(0,(sum, age) -> sum + age) * 1.0 / people.size());
 
         // filter 筛选
@@ -49,11 +50,11 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        // test();
+         test();
 
-        String x = "2, 35, 52, 9, 30, 31";
-//        List<String> list = Arrays.asList(x.split(","));
-        Set<Long> set = Arrays.asList(x.split(",")).stream().map(t->Long.valueOf(t.trim())).collect(Collectors.toSet());
-        set.forEach(t -> System.out.print(t + " "));
+//        String x = "2, 35, 52, 9, 30, 31";
+////        List<String> list = Arrays.asList(x.split(","));
+//        Set<Long> set = Arrays.asList(x.split(",")).stream().map(t->Long.valueOf(t.trim())).collect(Collectors.toSet());
+//        set.forEach(t -> System.out.print(t + " "));
     }
 }

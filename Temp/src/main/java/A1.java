@@ -114,7 +114,7 @@ class B {
     int t;              // default <=> package + 子类
 
     public static void main(String[] args) {
-        System.out.println("I am not a public class: B");
+        System.out.println("Mouth am not a public class: B");
     }
 
     @Override

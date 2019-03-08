@@ -1,13 +1,11 @@
 package a_参数实例能否正确返回;
 
-import lombok.Data;
-
 /**
  * @author guya on 2018/12/18
  */
 public class T {
 
-    // 参数值传过来的是句柄/指针值，不是对象本身 A&
+    // 参数值传过来的是句柄/指针值，不是对象本身 Person&
     public static A test(A a) {
         System.out.println("a:" + a.toString());
         // 返回的也是句柄/指针值

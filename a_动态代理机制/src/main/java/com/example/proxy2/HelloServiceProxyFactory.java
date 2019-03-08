@@ -13,6 +13,7 @@ public class HelloServiceProxyFactory {
     public static HelloService getHelloServiceProxy(final HelloService helloService) {
         // 创建一个实现了 InvocationHandler 接口的匿名类的实例
         InvocationHandler handler = new InvocationHandler() {
+            @Override
             public Object invoke(Object proxy, Method method, Object args[]) throws Exception {
                 System.out.println("before calling " + method); // 预处理
                 System.out.println(proxy.getClass().getName());
@@ -25,7 +26,7 @@ public class HelloServiceProxyFactory {
         };
         Class classType = HelloService.class;
         return (HelloService) Proxy.newProxyInstance(
-                classType.getClassLoader(), new Class[]{classType}, handler);
+                classType.getClassLoader(), new Class[]{classType, Mouth.class}, handler);
     }
 
     public static void precessAnnotation(Class clazz) {
@@ -39,7 +40,7 @@ public class HelloServiceProxyFactory {
     }
 
     public static void main(String[] args) {
-        HelloServiceProxyFactory.getHelloServiceProxy(new HelloServiceImpl()).say();
+        HelloServiceProxyFactory.getHelloServiceProxy(new HelloServiceImpl()).greet();
     }
 
 }

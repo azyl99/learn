@@ -23,7 +23,7 @@ public class Main {
 
     public void say() {
 //        System.out.println("helloService: " + helloService);
-        System.out.println("name: " + name);
+        System.out.println("say name: " + name);
     }
 
     public static void main(String[] args) {

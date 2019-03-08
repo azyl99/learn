@@ -2,7 +2,11 @@ package com.servlet1;
 
 import java.io.*;
 import javax.servlet.*;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 public class EchoServlet extends HttpServlet {
