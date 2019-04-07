@@ -1,4 +1,4 @@
-package com.example.proxy1;
+package com.example.a2_invocation_handler.demo.pure;
 
 /**
  * 顶层接口

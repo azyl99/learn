@@ -1,4 +1,4 @@
-package com.example.proxy2;
+package com.example.a2_invocation_handler.proxy2;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;

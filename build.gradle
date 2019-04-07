@@ -1,11 +1,13 @@
 plugins {
     id 'java'
+    id 'idea'
 }
 
 group 'con.guya.learn'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+
 
 allprojects {
     apply plugin: 'idea'
@@ -18,12 +20,14 @@ allprojects {
         mavenCentral()
     }
 
+    // 执行命令 gradle cleanIdea idea
     idea {
         module {
-            downloadJavadoc = true
+//            downloadJavadoc = true
             downloadSources = true
         }
     }
+
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
         compile "org.projectlombok:lombok:1.16.12"
@@ -98,5 +102,10 @@ project(":guava_try") {
 project(":a_百度图像识别") {
     dependencies {
         compile group: 'com.baidu.aip', name: 'java-sdk', version: '4.5.0'
+    }
+}
+project(":a_动态代理机制") {
+    dependencies {
+        compile group: 'cglib', name: 'cglib', version: '2.2.2'
     }
 }
