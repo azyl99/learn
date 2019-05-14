@@ -8,7 +8,7 @@
       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
     <bean id="user" class="com.guya2.User" scope="singleton">
-        <property name="name" value="张"></property>
+        <node name="name" value="张"></node>
     </bean>
 
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy><!-- 这句必不可少,否则AspectTest1就失效了 -->

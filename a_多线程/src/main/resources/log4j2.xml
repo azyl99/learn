@@ -5,7 +5,7 @@
         <Property name="APP_NAME">learn</Property>
         <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xEx</Property>
         <Property name="LOG_LEVEL_PATTERN">%5p</Property>
-        <Property name="LOG_PATTERN">${hostName} ${APP_NAME} %d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN} ${sys:PID} [%15.15t] %-40.40c{1.} : [%X{logId}] %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="LOG_PATTERN">${hostName} ${APP_NAME} %d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN} ${sys:PID} [%15.15t] %-20.20c{1.} : [%X{logId}] %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
         <Property name="LOG_PATH">./logs</Property>
     </Properties>
     <DynamicThresholdFilter key="logLevel" defaultThreshold="ERROR" onMatch="ACCEPT" onMismatch="DENY">

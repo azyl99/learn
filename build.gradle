@@ -8,6 +8,10 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+ext {
+    jacksonVersion = '2.8.11'
+}
+
 
 allprojects {
     apply plugin: 'idea'
@@ -43,6 +47,11 @@ allprojects {
         compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
         compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
         compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.10'
+
+
+        compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+        compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+        compile "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
     }
 
 }
@@ -66,6 +75,14 @@ project(":a_other") {
 project(":spring_mockmvc") {
     dependencies {
         compile('org.springframework.boot:spring-boot-starter-thymeleaf:1.5.14.RELEASE')
+        testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
+
+        testCompile group: 'org.mockito', name: 'mockito-core', version: '2.19.1'
+    }
+}
+
+project(":a_other") {
+    dependencies {
         testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
 
         testCompile group: 'org.mockito', name: 'mockito-core', version: '2.19.1'
