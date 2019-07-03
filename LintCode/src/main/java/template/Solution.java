@@ -5,7 +5,11 @@ package template;
  */
 public class Solution {
 
-    public static void main(String[] args) {
+    public void test() {
+    }
 
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        solution.test();
     }
 }

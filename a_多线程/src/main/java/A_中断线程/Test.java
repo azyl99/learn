@@ -44,12 +44,12 @@ public class Test {
         Test test = new Test();
         MyThread thread = test.new MyThread();
         thread.start();
-        Thread.currentThread().sleep(20);
+        Thread.sleep(20);
         thread.interrupt();
 
         MyThread2 thread2 = test.new MyThread2();
         thread2.start();
-        Thread.currentThread().sleep(20);
+        Thread.sleep(20);
         thread2.setStop(true);
     }
 }
