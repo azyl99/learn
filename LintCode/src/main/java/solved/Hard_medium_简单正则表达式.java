@@ -6,6 +6,8 @@ import java.util.Map;
 /**
  * https://leetcode-cn.com/problems/regular-expression-matching/
  *
+ * 本题用状态机来写的思路不难，但是有很多边界条件容易出错
+ *
  * @author guya on 2019/6/25
  */
 public class Hard_medium_简单正则表达式 {
