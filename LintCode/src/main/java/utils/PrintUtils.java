@@ -17,7 +17,7 @@ public class PrintUtils {
         StringBuilder sb = new StringBuilder();
         sb.append("[ ");
         for (int i : arr) {
-            sb.append(i).append(' ');
+            sb.append(String.format("%3d", i));
         }
         sb.append(']');
         return sb.toString();
@@ -29,7 +29,7 @@ public class PrintUtils {
         for (int[] line : arr) {
             sb.append("[ ");
             for (int i : line) {
-                sb.append(i).append(' ');
+                sb.append(String.format("%3d", i));
             }
             sb.append("]\n ");
         }

@@ -14,7 +14,7 @@ package solved;
  *
  * @author guya on 2019/6/25
  */
-public class Hard_medium_数独 {
+public class Hard_medium_数独_递归 {
 
     static final int N = 9;
     static final int M = 3;
@@ -100,7 +100,7 @@ public class Hard_medium_数独 {
     }
 
     public static void main(String[] args) {
-        Hard_medium_数独 hardmedium数独 = new Hard_medium_数独();
+        Hard_medium_数独_递归 hardmedium数独 = new Hard_medium_数独_递归();
         char[][] board = {
                 {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
                 {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
