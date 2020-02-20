@@ -11,8 +11,6 @@ import com.guya2.contract.UserService;
 import com.guya2.generate.common.domain.User;
 import com.guya2.generate.common.domain.UserExample;
 import com.guya2.repository.UserRepository;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,11 +23,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-    static final Logger logger = LogManager.getLogger(UserServiceImpl.class.getName());
-
     @Override
     public BaseResponse login(LoginRequest request) {
-        logger.info("--- try login ---");
         LoginResponse loginResponse = new LoginResponse();
         loginResponse.setUsername(request.getUsername());
         loginResponse.setPassword(request.getPassword());

@@ -10,6 +10,8 @@ sourceCompatibility = 1.8
 
 ext {
     jacksonVersion = '2.8.11'
+    log4jVersion = '2.11.0-p1.0.0'
+    springVersion = '4.2.4.RELEASE'
 }
 
 
@@ -32,26 +34,32 @@ allprojects {
         }
     }
 
+    configurations {
+        all*.exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
+
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
         compile "org.projectlombok:lombok:1.16.12"
-        compile('org.springframework.boot:spring-boot-starter-web:1.5.14.RELEASE'){
-            exclude group: "org.apache.tomcat.embed"
-        }
+        compile('org.springframework.boot:spring-boot-starter-web:1.5.14.RELEASE')
         testCompile('org.springframework.boot:spring-boot-starter-test:1.5.14.RELEASE') {
             exclude group: "org.mockito"
         }
-        compile "org.apache.logging.log4j:log4j-slf4j-impl:2.11.0-p1.0.0"
+        compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
+        compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
+        compile "org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion"
+        compile "org.springframework:spring-jdbc:$springVersion"
         compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'//javax.annotation.Nullable
         compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
         compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
         compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
-        compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.10'
 
 
         compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
         compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
         compile "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+
+        compile group: 'org.javassist', name: 'javassist', version: '3.26.0-GA'
     }
 
 }

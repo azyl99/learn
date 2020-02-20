@@ -36,6 +36,7 @@ public class TestException extends RuntimeException {
 //            log.error("hhh");
 //            log.error("xxx",e);
 //        }
+        log.info("hhh");
         String a = null;
         System.out.println(".".equalsIgnoreCase(a));
     }
